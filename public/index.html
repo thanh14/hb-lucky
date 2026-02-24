@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌸 Hái Lộc Đầu Xuân 🌸</title>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red: #c0392b;
+      --deep-red: #8B0000;
+      --gold: #FFD700;
+      --light-gold: #FFF0AA;
+      --peach: #FFB7C5;
+      --dark: #1a0000;
+      --cream: #FFF8F0;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      background: var(--dark);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .bg-pattern {
+      position: fixed; inset: 0; z-index: 0;
+      background: radial-gradient(ellipse at 20% 50%, #3d0000 0%, #1a0000 50%, #0d0000 100%);
+    }
+    .lanterns {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1;
+      display: flex; justify-content: space-around; pointer-events: none;
+    }
+    .lantern {
+      width: 24px; height: 36px;
+      background: linear-gradient(to bottom, #ff4444, #cc0000);
+      border-radius: 50% 50% 60% 60%;
+      position: relative;
+      animation: swing 3s ease-in-out infinite;
+      box-shadow: 0 0 20px #ff000088;
+      margin-top: -10px;
+    }
+    .lantern::before {
+      content: '';
+      position: absolute;
+      top: -8px; left: 50%; transform: translateX(-50%);
+      width: 2px; height: 10px;
+      background: var(--gold);
+    }
+    .lantern::after {
+      content: '';
+      position: absolute;
+      bottom: -10px; left: 50%; transform: translateX(-50%);
+      width: 1px; height: 10px;
+      background: var(--gold);
+    }
+    .lantern:nth-child(2) { animation-delay: 0.5s; }
+    .lantern:nth-child(3) { animation-delay: 1s; }
+    .lantern:nth-child(4) { animation-delay: 1.5s; }
+    .lantern:nth-child(5) { animation-delay: 0.3s; }
+    .lantern:nth-child(6) { animation-delay: 0.8s; }
+    @keyframes swing {
+      0%,100% { transform: rotate(-8deg); }
+      50% { transform: rotate(8deg); }
+    }
+
+    .petals-container { position: fixed; inset:0; z-index:2; pointer-events:none; overflow:hidden; }
+    .petal {
+      position: absolute;
+      width: 10px; height: 12px;
+      background: radial-gradient(ellipse, #ffb7c5, #ff8fa3);
+      border-radius: 50% 0 50% 0;
+      animation: fall linear infinite;
+      opacity: 0.8;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-20px) rotate(0deg); opacity:1; }
+      100% { transform: translateY(110vh) rotate(720deg); opacity:0; }
+    }
+
+    .container {
+      position: relative; z-index:10;
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 20px 16px 60px;
+    }
+
+    .header { text-align: center; padding: 20px 0 10px; }
+    .header h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.4rem;
+      color: var(--gold);
+      text-shadow: 0 0 30px #FFD70088, 2px 2px 0 #8B0000;
+      line-height: 1.2;
+    }
+    .header p {
+      color: var(--peach);
+      font-size: 0.9rem;
+      margin-top: 6px;
+      letter-spacing: 0.05em;
+    }
+
+    .card {
+      background: linear-gradient(135deg, #2d0000 0%, #1a0000 100%);
+      border: 1px solid #8B000066;
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 8px 32px #00000088, inset 0 1px 0 #ffffff11;
+    }
+    .card-title {
+      color: var(--gold);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex; align-items: center; gap: 8px;
+    }
+
+    .form-group { margin-bottom: 14px; }
+    label {
+      display: block;
+      color: #ffddaa;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    input {
+      width: 100%;
+      padding: 12px 16px;
+      background: #3d000099;
+      border: 1.5px solid #8B000088;
+      border-radius: 10px;
+      color: #fff;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    input:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px #FFD70022;
+    }
+    input::placeholder { color: #88444488; }
+
+    .btn-main {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #cc0000, #8B0000);
+      border: 2px solid var(--gold);
+      border-radius: 12px;
+      color: var(--gold);
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      letter-spacing: 0.05em;
+      transition: all 0.2s;
+      box-shadow: 0 4px 16px #cc000066;
+    }
+    .btn-main:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px #cc000088;
+      background: linear-gradient(135deg, #ee0000, #aa0000);
+    }
+    .btn-main:active { transform: translateY(0); }
+
+    .tree-section { display: none; text-align: center; margin-bottom: 16px; }
+    .tree-section.active { display: block; }
+    .tree-wrapper { position: relative; display: inline-block; cursor: pointer; }
+    .tree-svg { width: 280px; height: 320px; }
+    .envelopes-on-tree .env-item {
+      cursor: pointer;
+      transition: transform 0.2s;
+      pointer-events: all !important;
+      touch-action: manipulation;
+    }
+    .envelopes-on-tree .env-item:hover { transform: scale(1.15); }
+    .chosen-envelope { animation: bounce 0.5s ease; }
+    @keyframes bounce {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+
+    .tree-hint {
+      color: var(--peach);
+      font-size: 0.85rem;
+      margin-top: 8px;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.5;} }
+
+    .scratch-section { display: none; text-align: center; }
+    .scratch-section.active { display: block; }
+    .scratch-info { color: var(--peach); font-size: 0.85rem; margin-bottom: 12px; }
+    .scratch-wrapper {
+      position: relative;
+      display: inline-block;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 40px #FFD70044;
+      margin-bottom: 12px;
+    }
+    .scratch-canvas {
+      position: absolute; top:0; left:0;
+      cursor: crosshair;
+      border-radius: 16px;
+      touch-action: none;
+    }
+    .scratch-result {
+      width: 260px; height: 160px;
+      background: linear-gradient(135deg, #FFD700, #FFF0AA, #FFD700);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      border-radius: 16px;
+    }
+    .scratch-result .amount {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--deep-red);
+      line-height: 1;
+    }
+    .scratch-result .currency {
+      font-size: 1rem;
+      color: #8B0000;
+      font-weight: 700;
+    }
+    .scratch-result .luck-msg {
+      font-size: 0.8rem;
+      color: #8B0000;
+      margin-top: 4px;
+    }
+
+    .reveal-section { display:none; text-align:center; }
+    .reveal-section.active { display:block; }
+    .reveal-amount {
+      font-size: 3rem; font-weight: 900;
+      color: var(--gold);
+      text-shadow: 0 0 30px #FFD70088;
+      animation: zoomIn 0.5s ease;
+    }
+    @keyframes zoomIn { 0%{transform:scale(0);opacity:0;} 100%{transform:scale(1);opacity:1;} }
+    .reveal-msg { color: var(--peach); font-size: 0.9rem; margin-top: 6px; }
+    .btn-again {
+      margin-top: 14px;
+      padding: 10px 24px;
+      background: transparent;
+      border: 2px solid var(--gold);
+      border-radius: 10px;
+      color: var(--gold);
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-again:hover { background: var(--gold); color: var(--dark); }
+
+    .lb-title {
+      color: var(--gold);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .lb-empty {
+      color: #88444488;
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 20px;
+    }
+    .lb-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      margin-bottom: 8px;
+      background: #3d000044;
+      border: 1px solid #8B000033;
+      animation: slideIn 0.3s ease;
+    }
+    @keyframes slideIn { from{transform:translateX(30px);opacity:0;} to{transform:translateX(0);opacity:1;} }
+    .lb-item.rank-1 { background: linear-gradient(90deg, #8B000066, #FFD70022); border-color: var(--gold); }
+    .lb-item.rank-2 { background: linear-gradient(90deg, #8B000044, #C0C0C022); }
+    .lb-item.rank-3 { background: linear-gradient(90deg, #8B000044, #CD7F3222); }
+    .lb-rank {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+    .rank-1 .lb-rank { background: var(--gold); color: var(--dark); }
+    .rank-2 .lb-rank { background: #C0C0C0; color: var(--dark); }
+    .rank-3 .lb-rank { background: #CD7F32; color: var(--dark); }
+    .lb-item:not(.rank-1):not(.rank-2):not(.rank-3) .lb-rank { background: #8B000066; color: var(--peach); }
+    .lb-info { flex: 1; }
+    .lb-name { color: #fff; font-weight: 700; font-size: 0.9rem; }
+    .lb-phone { color: #88888888; font-size: 0.75rem; }
+    .lb-amount { color: var(--gold); font-weight: 800; font-size: 1rem; }
+
+    .firework { position: fixed; pointer-events: none; z-index: 999; }
+    .spark {
+      position: absolute;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      animation: sparkFly 1s ease-out forwards;
+    }
+    @keyframes sparkFly {
+      0% { transform: translate(0,0) scale(1); opacity:1; }
+      100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity:0; }
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #8B000066, transparent);
+      margin: 8px 0 16px;
+    }
+
+    .user-greeting {
+      color: var(--peach);
+      font-size: 0.9rem;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .user-greeting strong { color: var(--gold); }
+  </style>
+</head>
+<body>
+
+<div class="bg-pattern"></div>
+<div class="lanterns" id="lanterns"></div>
+<div class="petals-container" id="petals"></div>
+
+<div class="container">
+  <div class="header">
+    <h1>🌸 Hái Lộc Xuân 🌸</h1>
+    <p>Chào mừng Năm Mới 2025 · Vạn Sự Như Ý</p>
+  </div>
+
+  <div class="card" id="formSection">
+    <div class="card-title">🧧 Thông Tin Người Nhận</div>
+    <div class="form-group">
+      <label>Tên Momo của bạn</label>
+      <input type="text" id="inputName" placeholder="Nguyễn Văn A" maxlength="40" />
+    </div>
+    <div class="form-group">
+      <label>Số tài khoản Momo</label>
+      <input type="tel" id="inputPhone" placeholder="0912 345 678" maxlength="15" />
+    </div>
+    <button class="btn-main" onclick="startGame()">🌳 Vào Hái Lộc →</button>
+  </div>
+
+  <div class="tree-section" id="treeSection">
+    <div class="user-greeting" id="greetingText"></div>
+    <div class="card">
+      <div class="card-title">🌸 Cây Đào Hái Lộc</div>
+      <div class="divider"></div>
+      <div style="text-align:center">
+        <div class="tree-wrapper">
+          <svg class="tree-svg" viewBox="0 0 280 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Trunk & Branches & Blossoms (giữ nguyên như cũ) -->
+            <path d="M130 300 Q125 250 120 200 Q115 150 110 100" stroke="#6B3A2A" stroke-width="14" stroke-linecap="round" fill="none"/>
+            <path d="M150 300 Q155 250 160 200 Q165 150 170 100" stroke="#8B4A3A" stroke-width="10" stroke-linecap="round" fill="none"/>
+            <path d="M140 300 L140 200" stroke="#7B4030" stroke-width="18" stroke-linecap="round"/>
+            <path d="M135 250 Q100 230 80 210" stroke="#6B3A2A" stroke-width="8" stroke-linecap="round" fill="none"/>
+            <path d="M138 220 Q170 200 190 180" stroke="#6B3A2A" stroke-width="7" stroke-linecap="round" fill="none"/>
+            <path d="M136 190 Q105 165 90 140" stroke="#6B3A2A" stroke-width="6" stroke-linecap="round" fill="none"/>
+            <path d="M142 170 Q175 145 195 120" stroke="#6B3A2A" stroke-width="5" stroke-linecap="round" fill="none"/>
+            <path d="M138 140 Q120 110 115 80" stroke="#6B3A2A" stroke-width="5" stroke-linecap="round" fill="none"/>
+            <path d="M145 130 Q160 100 165 70" stroke="#6B3A2A" stroke-width="4" stroke-linecap="round" fill="none"/>
+            <g opacity="0.9">
+              <circle cx="82" cy="208" r="22" fill="#FFB7C5" opacity="0.6"/>
+              <circle cx="78" cy="202" r="9" fill="#FF8FA3"/>
+              <circle cx="86" cy="198" r="8" fill="#FFB7C5"/>
+              <circle cx="75" cy="212" r="7" fill="#FF99B0"/>
+              <circle cx="90" cy="210" r="8" fill="#FFB7C5"/>
+              <circle cx="192" cy="178" r="20" fill="#FFB7C5" opacity="0.6"/>
+              <circle cx="188" cy="172" r="9" fill="#FF8FA3"/>
+              <circle cx="196" cy="168" r="8" fill="#FFB7C5"/>
+              <circle cx="185" cy="182" r="7" fill="#FF99B0"/>
+              <circle cx="200" cy="180" r="8" fill="#FFB7C5"/>
+              <circle cx="88" cy="138" r="20" fill="#FFB7C5" opacity="0.7"/>
+              <circle cx="84" cy="132" r="9" fill="#FF8FA3"/>
+              <circle cx="92" cy="128" r="8" fill="#FFB7C5"/>
+              <circle cx="196" cy="118" r="18" fill="#FFB7C5" opacity="0.7"/>
+              <circle cx="192" cy="112" r="8" fill="#FF8FA3"/>
+              <circle cx="200" cy="108" r="7" fill="#FFB7C5"/>
+              <circle cx="115" cy="78" r="18" fill="#FFB7C5" opacity="0.8"/>
+              <circle cx="110" cy="72" r="8" fill="#FF8FA3"/>
+              <circle cx="118" cy="68" r="8" fill="#FFB7C5"/>
+              <circle cx="165" cy="68" r="16" fill="#FFB7C5" opacity="0.8"/>
+              <circle cx="160" cy="62" r="8" fill="#FF8FA3"/>
+              <circle cx="168" cy="58" r="7" fill="#FFB7C5"/>
+              <circle cx="140" cy="45" r="22" fill="#FFB7C5" opacity="0.7"/>
+              <circle cx="135" cy="38" r="10" fill="#FF8FA3"/>
+              <circle cx="144" cy="34" r="9" fill="#FFB7C5"/>
+              <circle cx="130" cy="48" r="8" fill="#FF99B0"/>
+              <circle cx="148" cy="46" r="9" fill="#FFB7C5"/>
+            </g>
+            <g class="envelopes-on-tree" id="envelopesGroup">
+              <g class="env-item" data-idx="0" onclick="pickEnvelope(0)" transform="translate(72,188)">
+                <rect x="0" y="0" width="22" height="16" rx="3" fill="#cc0000"/>
+                <path d="M0,0 L11,9 L22,0" stroke="#FFD700" stroke-width="1.5" fill="none"/>
+                <text x="11" y="12" text-anchor="middle" font-size="8" fill="#FFD700">🧧</text>
+              </g>
+              <g class="env-item" data-idx="1" onclick="pickEnvelope(1)" transform="translate(183,158)">
+                <rect x="0" y="0" width="22" height="16" rx="3" fill="#cc0000"/>
+                <path d="M0,0 L11,9 L22,0" stroke="#FFD700" stroke-width="1.5" fill="none"/>
+                <text x="11" y="12" text-anchor="middle" font-size="8" fill="#FFD700">🧧</text>
+              </g>
+              <g class="env-item" data-idx="2" onclick="pickEnvelope(2)" transform="translate(79,118)">
+                <rect x="0" y="0" width="22" height="16" rx="3" fill="#cc0000"/>
+                <path d="M0,0 L11,9 L22,0" stroke="#FFD700" stroke-width="1.5" fill="none"/>
+                <text x="11" y="12" text-anchor="middle" font-size="8" fill="#FFD700">🧧</text>
+              </g>
+              <g class="env-item" data-idx="3" onclick="pickEnvelope(3)" transform="translate(186,98)">
+                <rect x="0" y="0" width="22" height="16" rx="3" fill="#cc0000"/>
+                <path d="M0,0 L11,9 L22,0" stroke="#FFD700" stroke-width="1.5" fill="none"/>
+                <text x="11" y="12" text-anchor="middle" font-size="8" fill="#FFD700">🧧</text>
+              </g>
+              <g class="env-item" data-idx="4" onclick="pickEnvelope(4)" transform="translate(105,56)">
+                <rect x="0" y="0" width="22" height="16" rx="3" fill="#cc0000"/>
+                <path d="M0,0 L11,9 L22,0" stroke="#FFD700" stroke-width="1.5" fill="none"/>
+                <text x="11" y="12" text-anchor="middle" font-size="8" fill="#FFD700">🧧</text>
+              </g>
+              <g class="env-item" data-idx="5" onclick="pickEnvelope(5)" transform="translate(156,46)">
+                <rect x="0" y="0" width="22" height="16" rx="3" fill="#cc0000"/>
+                <path d="M0,0 L11,9 L22,0" stroke="#FFD700" stroke-width="1.5" fill="none"/>
+                <text x="11" y="12" text-anchor="middle" font-size="8" fill="#FFD700">🧧</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <p class="tree-hint">👆 Chọn 1 phong bì lì xì để hái lộc!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="scratch-section" id="scratchSection">
+    <div class="card">
+      <div class="card-title">🪙 Cào Để Xem Số Tiền</div>
+      <div class="divider"></div>
+      <div class="scratch-info">Dùng ngón tay / chuột cào hết lớp phủ để xem lì xì!</div>
+      <div style="display:flex; justify-content:center;">
+        <div class="scratch-wrapper">
+          <div class="scratch-result" id="scratchResult">
+            <div class="amount" id="amountDisplay">???</div>
+            <div class="currency">đồng</div>
+            <div class="luck-msg" id="luckMsg">🌸 Chúc Mừng Năm Mới 🌸</div>
+          </div>
+          <canvas class="scratch-canvas" id="scratchCanvas" width="260" height="160"></canvas>
+        </div>
+      </div>
+      <p style="color:#88444488;font-size:0.75rem;text-align:center;margin-top:8px;">Cào ≥60% để mở khóa kết quả</p>
+    </div>
+  </div>
+
+  <div class="reveal-section" id="revealSection">
+    <div class="card">
+      <div class="card-title">🎉 Kết Quả Lì Xì</div>
+      <div class="divider"></div>
+      <div class="reveal-amount" id="revealAmount">200.000đ</div>
+      <div class="reveal-msg" id="revealMsg"></div>
+      <button class="btn-again" onclick="playAgain()">🌸 Hái Thêm Lần Nữa</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="lb-title">🏆 Bảng Xếp Hạng Lì Xì</div>
+    <div class="divider"></div>
+    <div id="leaderboard"><div class="lb-empty">Đang tải bảng xếp hạng...</div></div>
+  </div>
+</div>
+
+<script>
+// ===== PETALS & LANTERNS =====
+(function(){
+  const c = document.getElementById('petals');
+  for(let i=0;i<18;i++){
+    const p = document.createElement('div');
+    p.className = 'petal';
+    p.style.left = Math.random()*100+'%';
+    p.style.top = Math.random()*-100+'px';
+    p.style.animationDuration = (4+Math.random()*6)+'s';
+    p.style.animationDelay = (Math.random()*8)+'s';
+    p.style.transform = `rotate(${Math.random()*360}deg)`;
+    p.style.opacity = 0.4+Math.random()*0.6;
+    c.appendChild(p);
+  }
+})();
+
+(function(){
+  const c = document.getElementById('lanterns');
+  for(let i=0;i<6;i++){
+    const l = document.createElement('div');
+    l.className = 'lantern';
+    c.appendChild(l);
+  }
+})();
+
+// ===== STATE =====
+let currentUser = null;
+let revealedAmount = 0;
+let leaderboard = [];
+
+const PRIZES = [
+  {amount: 10000, label:'10.000đ', msg:'🌸 Lộc nhỏ đầu xuân!'},
+  {amount: 20000, label:'20.000đ', msg:'🌿 Vạn sự hanh thông!'},
+  {amount: 50000, label:'50.000đ', msg:'🌸 Xuân an khang thịnh vượng!'},
+  {amount: 100000, label:'100.000đ', msg:'🎉 Năm mới phát tài!'},
+  {amount: 200000, label:'200.000đ', msg:'💰 Tiền vào như nước!'},
+  {amount: 500000, label:'500.000đ', msg:'🔥 Phú quý vinh hoa!'},
+  {amount: 1000000, label:'1.000.000đ', msg:'👑 Đại cát đại lợi!'},
+  {amount: 2000000, label:'2.000.000đ', msg:'🌟 Trúng số đầu xuân!!!'},
+];
+const WEIGHTS = [5, 15, 25, 22, 17, 10, 5, 1];
+
+function weightedRandom() {
+  const total = WEIGHTS.reduce((a,b)=>a+b,0);
+  let r = Math.random()*total;
+  for(let i=0;i<WEIGHTS.length;i++){
+    r -= WEIGHTS[i];
+    if(r<=0) return PRIZES[i];
+  }
+  return PRIZES[0];
+}
+
+function startGame(){
+  const name = document.getElementById('inputName').value.trim();
+  const phone = document.getElementById('inputPhone').value.trim();
+  if(!name){ alert('Vui lòng nhập tên Momo!'); return; }
+  if(!phone){ alert('Vui lòng nhập số tài khoản Momo!'); return; }
+  currentUser = {name, phone};
+  document.getElementById('greetingText').innerHTML = `Xin chào, <strong>${name}</strong>! Hãy chọn phong bì may mắn 🌸`;
+  document.getElementById('formSection').style.display = 'none';
+  document.getElementById('treeSection').classList.add('active');
+  document.getElementById('treeSection').scrollIntoView({behavior:'smooth'});
+}
+
+function pickEnvelope(idx){
+  const env = document.querySelector(`.env-item[data-idx="${idx}"]`);
+  if(env){
+    env.classList.add('chosen-envelope');
+    setTimeout(()=>env.remove(), 400);
+  }
+
+  const prize = weightedRandom();
+  revealedAmount = prize.amount;
+
+  setTimeout(()=>{
+    document.getElementById('treeSection').classList.remove('active');
+    document.getElementById('scratchSection').classList.add('active');
+    document.getElementById('amountDisplay').textContent = prize.label.replace('đ','');
+    document.getElementById('luckMsg').textContent = prize.msg;
+    initScratch(prize);
+    document.getElementById('scratchSection').scrollIntoView({behavior:'smooth'});
+  }, 500);
+}
+
+function initScratch(prize) {
+  const canvas = document.getElementById('scratchCanvas');
+  const ctx = canvas.getContext('2d');
+  let isScratching = false;
+  let revealed = false;
+
+  ctx.fillStyle = '#8B0000';
+  ctx.fillRect(0,0,260,160);
+
+  ctx.fillStyle = '#aa0000';
+  for(let x=0;x<260;x+=20){
+    for(let y=0;y<160;y+=20){
+      ctx.beginPath();
+      ctx.arc(x+10, y+10, 8, 0, Math.PI*2);
+      ctx.fill();
+    }
+  }
+
+  ctx.fillStyle = '#FFD700';
+  ctx.font = 'bold 18px Be Vietnam Pro, sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('👆 CÀO ĐỂ MỞ LÌ XÌ', 130, 75);
+  ctx.font = '13px Be Vietnam Pro, sans-serif';
+  ctx.fillStyle = '#FFD70099';
+  ctx.fillText('✨ Chúc Mừng Năm Mới ✨', 130, 105);
+
+  function getPos(e){
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    if(e.touches) return {x: (e.touches[0].clientX - rect.left)*scaleX, y: (e.touches[0].clientY - rect.top)*scaleY};
+    return {x: (e.clientX - rect.left)*scaleX, y: (e.clientY - rect.top)*scaleY};
+  }
+
+  function scratch(e){
+    if(!isScratching) return;
+    e.preventDefault();
+    const pos = getPos(e);
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.beginPath();
+    ctx.arc(pos.x, pos.y, 22, 0, Math.PI*2);
+    ctx.fill();
+    checkReveal();
+  }
+
+  function checkReveal(){
+    if(revealed) return;
+    const data = ctx.getImageData(0,0,260,160).data;
+    let transparent = 0;
+    for(let i=3;i<data.length;i+=4) if(data[i]<128) transparent++;
+    if(transparent / (260*160) > 0.6){
+      revealed = true;
+      canvas.style.pointerEvents = 'none';
+      setTimeout(()=>showReveal(prize), 400);
+    }
+  }
+
+  canvas.addEventListener('mousedown', e=>{isScratching=true; scratch(e);});
+  canvas.addEventListener('mousemove', scratch);
+  canvas.addEventListener('mouseup', ()=>isScratching=false);
+  canvas.addEventListener('mouseleave', ()=>isScratching=false);
+  canvas.addEventListener('touchstart', e=>{isScratching=true; scratch(e);});
+  canvas.addEventListener('touchmove', scratch);
+  canvas.addEventListener('touchend', ()=>isScratching=false);
+}
+
+function showReveal(prize){
+  document.getElementById('scratchSection').classList.remove('active');
+  document.getElementById('revealSection').classList.add('active');
+  document.getElementById('revealAmount').textContent = prize.label;
+  document.getElementById('revealMsg').textContent = prize.msg;
+
+  const entry = {
+    name: currentUser.name,
+    phone: maskPhone(currentUser.phone),
+    amount: prize.amount,
+    label: prize.label,
+    time: Date.now()
+  };
+
+  saveToLeaderboard(entry);
+
+  if(prize.amount >= 200000) launchFireworks();
+
+  document.getElementById('revealSection').scrollIntoView({behavior:'smooth'});
+}
+
+function maskPhone(phone){
+  if(phone.length <= 4) return phone;
+  return phone.slice(0,3) + '****' + phone.slice(-4);
+}
+
+function playAgain(){
+  currentUser = null;
+  document.getElementById('inputName').value = '';
+  document.getElementById('inputPhone').value = '';
+  document.getElementById('formSection').style.display = 'block';
+  document.getElementById('treeSection').classList.remove('active');
+  document.getElementById('scratchSection').classList.remove('active');
+  document.getElementById('revealSection').classList.remove('active');
+
+  document.getElementById('envelopesGroup').innerHTML = `
+    <g class="env-item" data-idx="0" onclick="pickEnvelope(0)" transform="translate(72,188)"><rect x="0" y="0" width="22" height="16" rx="3" fill="#cc0000"/><path d="M0,0 L11,9 L22,0" stroke="#FFD700" stroke-width="1.5" fill="none"/><text x="11" y="12" text-anchor="middle" font-size="8" fill="#FFD700">🧧</text></g>
+    <g class="env-item" data-idx="1" onclick="pickEnvelope(1)" transform="translate(183,158)"><rect x="0" y="0" width="22" height="16" rx="3" fill="#cc0000"/><path d="M0,0 L11,9 L22,0" stroke="#FFD700" stroke-width="1.5" fill="none"/><text x="11" y="12" text-anchor="middle" font-size="8" fill="#FFD700">🧧</text></g>
+    <g class="env-item" data-idx="2" onclick="pickEnvelope(2)" transform="translate(79,118)"><rect x="0" y="0" width="22" height="16" rx="3" fill="#cc0000"/><path d="M0,0 L11,9 L22,0" stroke="#FFD700" stroke-width="1.5" fill="none"/><text x="11" y="12" text-anchor="middle" font-size="8" fill="#FFD700">🧧</text></g>
+    <g class="env-item" data-idx="3" onclick="pickEnvelope(3)" transform="translate(186,98)"><rect x="0" y="0" width="22" height="16" rx="3" fill="#cc0000"/><path d="M0,0 L11,9 L22,0" stroke="#FFD700" stroke-width="1.5" fill="none"/><text x="11" y="12" text-anchor="middle" font-size="8" fill="#FFD700">🧧</text></g>
+    <g class="env-item" data-idx="4" onclick="pickEnvelope(4)" transform="translate(105,56)"><rect x="0" y="0" width="22" height="16" rx="3" fill="#cc0000"/><path d="M0,0 L11,9 L22,0" stroke="#FFD700" stroke-width="1.5" fill="none"/><text x="11" y="12" text-anchor="middle" font-size="8" fill="#FFD700">🧧</text></g>
+    <g class="env-item" data-idx="5" onclick="pickEnvelope(5)" transform="translate(156,46)"><rect x="0" y="0" width="22" height="16" rx="3" fill="#cc0000"/><path d="M0,0 L11,9 L22,0" stroke="#FFD700" stroke-width="1.5" fill="none"/><text x="11" y="12" text-anchor="middle" font-size="8" fill="#FFD700">🧧</text></g>
+  `;
+
+  document.getElementById('formSection').scrollIntoView({behavior:'smooth'});
+}
+
+// ===== LEADERBOARD API =====
+async function loadLeaderboard() {
+  try {
+    const res = await fetch('/api/leaderboard');
+    if (res.ok) {
+      leaderboard = await res.json();
+      renderLeaderboard();
+    } else {
+      document.getElementById('leaderboard').innerHTML = '<div class="lb-empty">Không thể tải bảng xếp hạng lúc này</div>';
+    }
+  } catch (err) {
+    console.error(err);
+    document.getElementById('leaderboard').innerHTML = '<div class="lb-empty">Lỗi kết nối, thử lại sau</div>';
+  }
+}
+
+async function saveToLeaderboard(entry) {
+  try {
+    const res = await fetch('/api/leaderboard', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(entry)
+    });
+    if (res.ok) {
+      leaderboard = await res.json();
+      renderLeaderboard();
+    }
+  } catch (err) {
+    console.error('Lỗi lưu kết quả:', err);
+  }
+}
+
+function renderLeaderboard(){
+  const lb = document.getElementById('leaderboard');
+  if(leaderboard.length === 0){
+    lb.innerHTML = '<div class="lb-empty">Chưa có ai hái lộc. Hãy là người đầu tiên! 🌸</div>';
+    return;
+  }
+  const medals = ['🥇','🥈','🥉'];
+  lb.innerHTML = leaderboard.slice(0,10).map((item,i)=>`
+    <div class="lb-item rank-${i+1}">
+      <div class="lb-rank">${medals[i] || (i+1)}</div>
+      <div class="lb-info">
+        <div class="lb-name">${escapeHtml(item.name)}</div>
+        <div class="lb-phone">${escapeHtml(item.phone)}</div>
+      </div>
+      <div class="lb-amount">${item.label}</div>
+    </div>
+  `).join('');
+}
+
+function escapeHtml(s){
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ===== FIREWORKS =====
+function launchFireworks(){
+  const colors = ['#FFD700','#FF4444','#FF8FA3','#ffffff','#FFA500'];
+  for(let f=0;f<5;f++){
+    setTimeout(()=>{
+      const fw = document.createElement('div');
+      fw.className = 'firework';
+      fw.style.left = (20+Math.random()*60)+'%';
+      fw.style.top = (10+Math.random()*40)+'%';
+      document.body.appendChild(fw);
+      for(let s=0;s<16;s++){
+        const spark = document.createElement('div');
+        spark.className = 'spark';
+        const angle = (s/16)*Math.PI*2;
+        const dist = 40+Math.random()*60;
+        spark.style.setProperty('--tx', Math.cos(angle)*dist+'px');
+        spark.style.setProperty('--ty', Math.sin(angle)*dist+'px');
+        spark.style.background = colors[Math.floor(Math.random()*colors.length)];
+        spark.style.animationDelay = Math.random()*0.2+'s';
+        fw.appendChild(spark);
+      }
+      setTimeout(()=>fw.remove(), 1200);
+    }, f*200);
+  }
+}
+
+// Init
+loadLeaderboard();
+</script>
+</body>
+</html>
