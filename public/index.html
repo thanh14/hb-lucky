@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🌸 Hái Lộc Đầu Xuân 2025 🌸</title>
+  <title>🌸 Hái Lộc Đầu Xuân 2026 Cùng Hà My 🌸</title>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
   
   <style>
@@ -129,8 +129,8 @@
 
 <div class="container">
   <div class="header">
-    <h1>🌸 Hái Lộc Xuân 🌸</h1>
-    <p>Chào mừng Năm Mới 2025 · Vạn Sự Như Ý</p>
+    <h1>🌸 Hái Lộc Xuân Cùng Hà My🌸</h1>
+    <p>Chào mừng Năm Mới 2026 · Vạn Sự Như Ý</p>
   </div>
 
   <div class="card" id="formSection">
@@ -149,7 +149,7 @@
   <div class="tree-section" id="treeSection">
     <div class="user-greeting" id="greetingText"></div>
     <div class="card">
-      <div class="card-title">🌸 Cây Đào Hái Lộc</div>
+      <div class="card-title">🌸 Cây Đào Hái Lộc Hà My</div>
       <div class="divider"></div>
       <div style="display:flex;justify-content:center">
         <div class="tree-container" id="treeContainer">
@@ -437,36 +437,41 @@ let quyConLai = QUY_TONG;
 let slotsCon = MAX_PLAYERS;
 
 // ── PRIZES ──
-const PRIZES_POOL = [
-  { amount: 10000, label: '10.000đ', msg: '🧧 Đại cát đại lợi!' },
-  { amount: 15000, label: '15.000đ', msg: '🌸 Lộc xuân bình an!' },
-  { amount: 20000, label: '20.000đ', msg: '🌿 Hanh thông mọi việc!' },
-  { amount: 25000, label: '25.000đ', msg: '🎉 May mắn năm mới!' },
-  { amount: 30000, label: '30.000đ', msg: '✨ Phát tài phát lộc!' },
-  { amount: 35000, label: '35.000đ', msg: '🌟 Tấn tài tấn lộc!' },
-  { amount: 40000, label: '40.000đ', msg: '💰 Lộc vàng đầu xuân!' },
-  { amount: 45000, label: '45.000đ', msg: '🎊 Đại phú đại quý!' },
-  { amount: 50000, label: '50.000đ', msg: '🌸 Xuân an khang!' }
+// Chuyển sang 'let' để có thể xóa phần tử sau khi cào
+let PRIZES_POOL = [
+  { amount: 10000, label: '10.000đ', msg: '🧧 Đại cát đại lợi!', weight: 5 }, // Trọng số cao
+  { amount: 15000, label: '15.000đ', msg: '🌸 Lộc xuân bình an!', weight: 5 }, 
+  { amount: 20000, label: '20.000đ', msg: '🌿 Hanh thông mọi việc!', weight: 5 },
+  { amount: 25000, label: '25.000đ', msg: '🎉 May mắn năm mới!', weight: 3 },  // Trọng số trung bình
+  { amount: 30000, label: '30.000đ', msg: '✨ Phát tài phát lộc!', weight: 2 },
+  { amount: 35000, label: '35.000đ', msg: '🌟 Tấn tài tấn lộc!', weight: 2 },
+  { amount: 40000, label: '40.000đ', msg: '💰 Lộc vàng đầu xuân!', weight: 1 }, // Trọng số thấp
+  { amount: 45000, label: '45.000đ', msg: '🎊 Đại phú đại quý!', weight: 1 },
+  { amount: 50000, label: '50.000đ', msg: '🌸 Xuân an khang!', weight: 1 }
 ];
 
 function getRandomPrize() {
-  const max = 50000;
-  const step = 5000;
+  if (PRIZES_POOL.length === 0) {
+    return { amount: 0, label: 'Hết lộc', msg: 'Hẹn bạn dịp khác nhé!' };
+  }
 
-  const totalWeight = PRIZES_POOL.reduce(
-    (sum, p) => sum + ((max - p.amount) / step + 1),
-    0
-  );
+  // 1. Tính tổng trọng số hiện có trong mảng
+  const totalWeight = PRIZES_POOL.reduce((sum, p) => sum + p.weight, 0);
 
+  // 2. Quay số ngẫu nhiên
   let rand = Math.random() * totalWeight;
   let sum = 0;
 
-  for (let p of PRIZES_POOL) {
-    sum += ((max - p.amount) / step + 1);
-    if (rand <= sum) return p;
+  for (let i = 0; i < PRIZES_POOL.length; i++) {
+    sum += PRIZES_POOL[i].weight;
+    if (rand <= sum) {
+      // 3. Lấy phần thưởng ra và XÓA khỏi mảng để người sau không lấy trùng
+      const selected = PRIZES_POOL.splice(i, 1)[0];
+      return selected;
+    }
   }
 
-  return PRIZES_POOL[PRIZES_POOL.length - 1];
+  return PRIZES_POOL.pop(); // Trường hợp dự phòng
 }
 
 async function loadLeaderboard() {
