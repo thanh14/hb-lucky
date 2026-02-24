@@ -206,7 +206,7 @@
   <div class="card">
     <div class="card-title">🏆 Bảng Xếp Hạng Lì Xì</div>
     <div class="divider"></div>
-    <div id="quyInfo">
+    <div id="quyInfo" style="display: none;">
       Quỹ còn lại: <span id="quyConLai">250.000</span>đ (còn <span id="slotCon">10</span> lượt)
     </div>
     <div id="leaderboard"><div class="lb-empty">Đang tải bảng xếp hạng...</div></div>
@@ -438,29 +438,36 @@ let slotsCon = MAX_PLAYERS;
 
 // ── PRIZES ──
 const PRIZES_POOL = [
-  {amount: 50000, label: '50.000đ', msg: '🌸 Xuân an khang!'},
-  {amount: 50000, label: '50.000đ', msg: '🧧 Đại cát đại lợi!'},
-  {amount: 30000, label: '30.000đ', msg: '🌿 Hanh thông mọi việc!'},
-  {amount: 30000, label: '30.000đ', msg: '✨ Phát tài phát lộc!'},
-  {amount: 20000, label: '20.000đ', msg: '💰 Lộc nhỏ đầu xuân!'},
-  {amount: 20000, label: '20.000đ', msg: '🎉 May mắn năm mới!'},
-  {amount: 20000, label: '20.000đ', msg: '🎊 Vạn sự như ý!'},
-  {amount: 10000, label: '10.000đ', msg: '🌸 Lộc xuân bình an!'},
-  {amount: 10000, label: '10.000đ', msg: '🌱 Khởi đầu thuận lợi!'},
-  {amount: 10000, label: '10.000đ', msg: '🧧 Cung chúc tân xuân!'}
+  { amount: 10000, label: '10.000đ', msg: '🧧 Đại cát đại lợi!' },
+  { amount: 15000, label: '15.000đ', msg: '🌸 Lộc xuân bình an!' },
+  { amount: 20000, label: '20.000đ', msg: '🌿 Hanh thông mọi việc!' },
+  { amount: 25000, label: '25.000đ', msg: '🎉 May mắn năm mới!' },
+  { amount: 30000, label: '30.000đ', msg: '✨ Phát tài phát lộc!' },
+  { amount: 35000, label: '35.000đ', msg: '🌟 Tấn tài tấn lộc!' },
+  { amount: 40000, label: '40.000đ', msg: '💰 Lộc vàng đầu xuân!' },
+  { amount: 45000, label: '45.000đ', msg: '🎊 Đại phú đại quý!' },
+  { amount: 50000, label: '50.000đ', msg: '🌸 Xuân an khang!' }
 ];
 
 function getRandomPrize() {
-  const totalWeight = PRIZES_POOL.reduce((sum, p) => sum + (1 / (p.amount || 1)), 0);
+  const max = 50000;
+  const step = 5000;
+
+  const totalWeight = PRIZES_POOL.reduce(
+    (sum, p) => sum + ((max - p.amount) / step + 1),
+    0
+  );
+
   let rand = Math.random() * totalWeight;
   let sum = 0;
+
   for (let p of PRIZES_POOL) {
-    sum += 1 / (p.amount || 1);
+    sum += ((max - p.amount) / step + 1);
     if (rand <= sum) return p;
   }
+
   return PRIZES_POOL[PRIZES_POOL.length - 1];
 }
-
 
 async function loadLeaderboard() {
   try {
