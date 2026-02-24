@@ -175,7 +175,6 @@
       <div class="reveal-amount" id="revealAmount"></div>
       <div class="reveal-msg" id="revealMsg2"></div>
       <div style="margin-top:10px;color:#ffddaa88;font-size:.8rem;text-align:center">Momo: <span id="revealPhone"></span></div>
-      <button class="btn-again" onclick="playAgain()">🌸 Hái Thêm Lần Nữa</button>
     </div>
   </div>
 
@@ -183,7 +182,6 @@
     <div class="card-title">🏆 Bảng Xếp Hạng Lì Xì</div>
     <div class="divider"></div>
     <div id="quyInfo">
-      Quỹ còn lại: <span id="quyConLai">200.000</span>đ (còn <span id="slotCon">10</span> lượt)
     </div>
     <div id="leaderboard"><div class="lb-empty">Đang tải bảng xếp hạng...</div></div>
   </div>
@@ -192,13 +190,13 @@
 <script>
 // ── CONFIG GOOGLE APPS SCRIPT ──
 // Thay bằng Web app URL của bạn sau khi deploy Apps Script
-const API_URL = 'https://script.google.com/macros/s/AKfycby_63fePhXwIAQ1eRz61IjQ6cd7qNvZiIYMXwu29gChF241xwlbD279Qrb3gLrKVELP/exec';  // ← THAY Ở ĐÂY
+const API_URL = 'https://script.google.com/macros/s/AKfycbxZePxxBOardnaL8eJ7yzJ8uH26ASVYhAY-6nxfYgE5uFZr0HHuO_cHhgxYnAjbYaUt/exec';  // ← THAY Ở ĐÂY
 
 // ── STATE & QUỸ ──
 let user = null;
 let prize = null;
 let leaderboard = [];
-const QUY_TONG = 200000;
+const QUY_TONG = 250000;
 const MAX_PLAYERS = 10;
 let quyConLai = QUY_TONG;
 let slotsCon = MAX_PLAYERS;
