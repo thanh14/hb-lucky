@@ -518,24 +518,22 @@ async function loadLeaderboard() {
 
 async function saveResult(entry) {
   try {
-    // Chuyển dữ liệu thành Query Parameters để tránh lỗi CORS phức tạp của POST
-    const params = new URLSearchParams({
+    const payload = {
       action: 'append',
       name: entry.name,
       phone: entry.phone,
       amount: entry.amount,
       label: entry.label
+    };
+
+    await fetch(API_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
     });
 
-    const urlWithParams = `${API_URL}?${params.toString()}`;
-
-    // Không dùng no-cors nữa, dùng mode cors mặc định
-    const response = await fetch(urlWithParams, {
-      method: 'GET',
-    });
-
-    // Sau khi gọi thành công, đợi 2 giây để Google Sheet "tiêu hóa" dữ liệu rồi load lại
-    setTimeout(loadLeaderboard, 2000);
+    setTimeout(loadLeaderboard, 3000);
   } catch (err) {
     console.error('Lỗi lưu:', err);
   }
