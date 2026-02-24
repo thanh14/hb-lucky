@@ -1,95 +1,98 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🌸 Hái Lộc Đầu Xuân 🌸</title>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --red: #c0392b; --deep-red: #8B0000; --gold: #FFD700;
-    --peach: #FFB7C5; --dark: #1a0000;
-  }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:'Be Vietnam Pro',sans-serif; background:var(--dark); min-height:100vh; overflow-x:hidden; }
-  .bg-pattern { position:fixed; inset:0; z-index:0; background:radial-gradient(ellipse at 20% 50%, #3d0000 0%, #1a0000 50%, #0d0000 100%); }
-  .lanterns { position:fixed; top:0; left:0; right:0; z-index:1; display:flex; justify-content:space-around; pointer-events:none; }
-  .lantern { width:24px; height:36px; background:linear-gradient(to bottom,#ff4444,#cc0000); border-radius:50% 50% 60% 60%; position:relative; animation:swing 3s ease-in-out infinite; box-shadow:0 0 20px #ff000088; margin-top:-10px; }
-  .lantern::before { content:''; position:absolute; top:-8px; left:50%; transform:translateX(-50%); width:2px; height:10px; background:var(--gold); }
-  .lantern::after  { content:''; position:absolute; bottom:-10px; left:50%; transform:translateX(-50%); width:1px; height:10px; background:var(--gold); }
-  .lantern:nth-child(2){animation-delay:.5s} .lantern:nth-child(3){animation-delay:1s}
-  .lantern:nth-child(4){animation-delay:1.5s} .lantern:nth-child(5){animation-delay:.3s} .lantern:nth-child(6){animation-delay:.8s}
-  @keyframes swing{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
-  .petals-container{position:fixed;inset:0;z-index:2;pointer-events:none;overflow:hidden}
-  .petal{position:absolute;width:10px;height:12px;background:radial-gradient(ellipse,#ffb7c5,#ff8fa3);border-radius:50% 0 50% 0;animation:fall linear infinite;opacity:.8}
-  @keyframes fall{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌸 Hái Lộc Đầu Xuân 2025 🌸</title>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --red: #c0392b; --deep-red: #8B0000; --gold: #FFD700;
+      --peach: #FFB7C5; --dark: #1a0000;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Be Vietnam Pro',sans-serif; background:var(--dark); min-height:100vh; overflow-x:hidden; }
+    .bg-pattern { position:fixed; inset:0; z-index:0; background:radial-gradient(ellipse at 20% 50%, #3d0000 0%, #1a0000 50%, #0d0000 100%); }
+    .lanterns { position:fixed; top:0; left:0; right:0; z-index:1; display:flex; justify-content:space-around; pointer-events:none; }
+    .lantern { width:24px; height:36px; background:linear-gradient(to bottom,#ff4444,#cc0000); border-radius:50% 50% 60% 60%; position:relative; animation:swing 3s ease-in-out infinite; box-shadow:0 0 20px #ff000088; margin-top:-10px; }
+    .lantern::before { content:''; position:absolute; top:-8px; left:50%; transform:translateX(-50%); width:2px; height:10px; background:var(--gold); }
+    .lantern::after  { content:''; position:absolute; bottom:-10px; left:50%; transform:translateX(-50%); width:1px; height:10px; background:var(--gold); }
+    .lantern:nth-child(2){animation-delay:.5s} .lantern:nth-child(3){animation-delay:1s}
+    .lantern:nth-child(4){animation-delay:1.5s} .lantern:nth-child(5){animation-delay:.3s} .lantern:nth-child(6){animation-delay:.8s}
+    @keyframes swing{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+    .petals-container{position:fixed;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+    .petal{position:absolute;width:10px;height:12px;background:radial-gradient(ellipse,#ffb7c5,#ff8fa3);border-radius:50% 0 50% 0;animation:fall linear infinite;opacity:.8}
+    @keyframes fall{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
 
-  .container{position:relative;z-index:10;max-width:520px;margin:0 auto;padding:20px 16px 60px}
-  .header{text-align:center;padding:20px 0 10px}
-  .header h1{font-family:'Pacifico',cursive;font-size:2.4rem;color:var(--gold);text-shadow:0 0 30px #FFD70088,2px 2px 0 #8B0000;line-height:1.2}
-  .header p{color:var(--peach);font-size:.9rem;margin-top:6px;letter-spacing:.05em}
+    .container{position:relative;z-index:10;max-width:520px;margin:0 auto;padding:20px 16px 60px}
+    .header{text-align:center;padding:20px 0 10px}
+    .header h1{font-family:'Pacifico',cursive;font-size:2.4rem;color:var(--gold);text-shadow:0 0 30px #FFD70088,2px 2px 0 #8B0000;line-height:1.2}
+    .header p{color:var(--peach);font-size:.9rem;margin-top:6px;letter-spacing:.05em}
 
-  .card{background:linear-gradient(135deg,#2d0000 0%,#1a0000 100%);border:1px solid #8B000066;border-radius:20px;padding:24px;margin-bottom:16px;box-shadow:0 8px 32px #00000088,inset 0 1px 0 #ffffff11}
-  .card-title{color:var(--gold);font-size:1rem;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px}
-  .divider{height:1px;background:linear-gradient(90deg,transparent,#8B000066,transparent);margin:8px 0 16px}
-  .form-group{margin-bottom:14px}
-  label{display:block;color:#ffddaa;font-size:.85rem;font-weight:600;margin-bottom:6px}
-  input{width:100%;padding:12px 16px;background:#3d000099;border:1.5px solid #8B000088;border-radius:10px;color:#fff;font-family:'Be Vietnam Pro',sans-serif;font-size:.95rem;outline:none;transition:border-color .2s,box-shadow .2s}
-  input:focus{border-color:var(--gold);box-shadow:0 0 0 3px #FFD70022}
-  input::placeholder{color:#88444466}
-  .btn-main{width:100%;padding:14px;background:linear-gradient(135deg,#cc0000,#8B0000);border:2px solid var(--gold);border-radius:12px;color:var(--gold);font-family:'Be Vietnam Pro',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;letter-spacing:.05em;transition:all .2s;box-shadow:0 4px 16px #cc000066}
-  .btn-main:hover{transform:translateY(-2px);box-shadow:0 8px 24px #cc000088}
+    .card{background:linear-gradient(135deg,#2d0000 0%,#1a0000 100%);border:1px solid #8B000066;border-radius:20px;padding:24px;margin-bottom:16px;box-shadow:0 8px 32px #00000088,inset 0 1px 0 #ffffff11}
+    .card-title{color:var(--gold);font-size:1rem;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+    .divider{height:1px;background:linear-gradient(90deg,transparent,#8B000066,transparent);margin:8px 0 16px}
+    .form-group{margin-bottom:14px}
+    label{display:block;color:#ffddaa;font-size:.85rem;font-weight:600;margin-bottom:6px}
+    input{width:100%;padding:12px 16px;background:#3d000099;border:1.5px solid #8B000088;border-radius:10px;color:#fff;font-family:'Be Vietnam Pro',sans-serif;font-size:.95rem;outline:none;transition:border-color .2s,box-shadow .2s}
+    input:focus{border-color:var(--gold);box-shadow:0 0 0 3px #FFD70022}
+    input::placeholder{color:#88444466}
+    .btn-main{width:100%;padding:14px;background:linear-gradient(135deg,#cc0000,#8B0000);border:2px solid var(--gold);border-radius:12px;color:var(--gold);font-family:'Be Vietnam Pro',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;letter-spacing:.05em;transition:all .2s;box-shadow:0 4px 16px #cc000066}
+    .btn-main:hover{transform:translateY(-2px);box-shadow:0 8px 24px #cc000088}
 
-  .tree-section{display:none} .tree-section.active{display:block}
-  .user-greeting{color:var(--peach);font-size:.9rem;text-align:center;margin-bottom:10px}
-  .user-greeting strong{color:var(--gold)}
-  .tree-hint{color:var(--peach);font-size:.85rem;margin-top:10px;text-align:center;animation:pulse 2s ease-in-out infinite}
-  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
-  .tree-container{position:relative;display:inline-block}
-  .tree-svg{width:280px;height:320px;display:block}
+    .tree-section{display:none} .tree-section.active{display:block}
+    .user-greeting{color:var(--peach);font-size:.9rem;text-align:center;margin-bottom:10px}
+    .user-greeting strong{color:var(--gold)}
+    .tree-hint{color:var(--peach);font-size:.85rem;margin-top:10px;text-align:center;animation:pulse 2s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+    .tree-container{position:relative;display:inline-block}
+    .tree-svg{width:280px;height:320px;display:block}
 
-  .env-btn{position:absolute;width:40px;height:30px;background:linear-gradient(135deg,#cc0000,#880000);border:2px solid var(--gold);border-radius:6px;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;transition:transform .15s,box-shadow .15s;box-shadow:0 2px 10px #00000088,0 0 8px #FFD70044;animation:floatEnv 3s ease-in-out infinite;z-index:5}
-  .env-btn:nth-child(1){animation-delay:0s} .env-btn:nth-child(2){animation-delay:.5s}
-  .env-btn:nth-child(3){animation-delay:1s}  .env-btn:nth-child(4){animation-delay:1.5s}
-  .env-btn:nth-child(5){animation-delay:.7s} .env-btn:nth-child(6){animation-delay:.3s}
-  @keyframes floatEnv{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,-60%)}}
-  .env-btn:hover{transform:translate(-50%,-65%) scale(1.2)!important;box-shadow:0 8px 24px #FFD70088!important}
-  .env-btn:active{transform:translate(-50%,-50%) scale(.95)!important}
+    .env-btn{position:absolute;width:40px;height:30px;background:linear-gradient(135deg,#cc0000,#880000);border:2px solid var(--gold);border-radius:6px;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;transition:transform .15s,box-shadow .15s;box-shadow:0 2px 10px #00000088,0 0 8px #FFD70044;animation:floatEnv 3s ease-in-out infinite;z-index:5}
+    .env-btn:nth-child(1){animation-delay:0s} .env-btn:nth-child(2){animation-delay:.5s}
+    .env-btn:nth-child(3){animation-delay:1s}  .env-btn:nth-child(4){animation-delay:1.5s}
+    .env-btn:nth-child(5){animation-delay:.7s} .env-btn:nth-child(6){animation-delay:.3s}
+    @keyframes floatEnv{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,-60%)}}
+    .env-btn:hover{transform:translate(-50%,-65%) scale(1.2)!important;box-shadow:0 8px 24px #FFD70088!important}
+    .env-btn:active{transform:translate(-50%,-50%) scale(.95)!important}
 
-  .scratch-section{display:none} .scratch-section.active{display:block}
-  .scratch-info{color:var(--peach);font-size:.85rem;margin-bottom:12px;text-align:center}
-  .scratch-wrapper{position:relative;display:inline-block;border-radius:16px;overflow:hidden;box-shadow:0 0 40px #FFD70044;margin-bottom:8px}
-  .scratch-result{width:260px;height:160px;background:linear-gradient(135deg,#FFD700,#FFF0AA,#FFD700);display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:16px}
-  .scratch-result .amount{font-size:2.2rem;font-weight:900;color:var(--deep-red);line-height:1}
-  .scratch-result .currency{font-size:1rem;color:#8B0000;font-weight:700}
-  .scratch-result .luck-msg{font-size:.8rem;color:#8B0000;margin-top:4px}
-  .scratch-canvas{position:absolute;top:0;left:0;cursor:crosshair;border-radius:16px;touch-action:none}
+    .scratch-section{display:none} .scratch-section.active{display:block}
+    .scratch-info{color:var(--peach);font-size:.85rem;margin-bottom:12px;text-align:center}
+    .scratch-wrapper{position:relative;display:inline-block;border-radius:16px;overflow:hidden;box-shadow:0 0 40px #FFD70044;margin-bottom:8px}
+    .scratch-result{width:260px;height:160px;background:linear-gradient(135deg,#FFD700,#FFF0AA,#FFD700);display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:16px}
+    .scratch-result .amount{font-size:2.2rem;font-weight:900;color:var(--deep-red);line-height:1}
+    .scratch-result .currency{font-size:1rem;color:#8B0000;font-weight:700}
+    .scratch-result .luck-msg{font-size:.8rem;color:#8B0000;margin-top:4px}
+    .scratch-canvas{position:absolute;top:0;left:0;cursor:crosshair;border-radius:16px;touch-action:none}
 
-  .reveal-section{display:none} .reveal-section.active{display:block}
-  .reveal-amount{font-size:3rem;font-weight:900;color:var(--gold);text-shadow:0 0 30px #FFD70088;animation:zoomIn .5s ease;text-align:center}
-  @keyframes zoomIn{0%{transform:scale(0);opacity:0}100%{transform:scale(1);opacity:1}}
-  .reveal-msg{color:var(--peach);font-size:.9rem;margin-top:6px;text-align:center}
-  .btn-again{margin-top:14px;padding:10px 24px;background:transparent;border:2px solid var(--gold);border-radius:10px;color:var(--gold);font-family:'Be Vietnam Pro',sans-serif;font-size:.9rem;font-weight:700;cursor:pointer;transition:all .2s;display:block;margin-left:auto;margin-right:auto}
-  .btn-again:hover{background:var(--gold);color:var(--dark)}
+    .reveal-section{display:none} .reveal-section.active{display:block}
+    .reveal-amount{font-size:3rem;font-weight:900;color:var(--gold);text-shadow:0 0 30px #FFD70088;animation:zoomIn .5s ease;text-align:center}
+    @keyframes zoomIn{0%{transform:scale(0);opacity:0}100%{transform:scale(1);opacity:1}}
+    .reveal-msg{color:var(--peach);font-size:.9rem;margin-top:6px;text-align:center}
+    .btn-again{margin-top:14px;padding:10px 24px;background:transparent;border:2px solid var(--gold);border-radius:10px;color:var(--gold);font-family:'Be Vietnam Pro',sans-serif;font-size:.9rem;font-weight:700;cursor:pointer;transition:all .2s;display:block;margin-left:auto;margin-right:auto}
+    .btn-again:hover{background:var(--gold);color:var(--dark)}
 
-  .lb-empty{color:#88444488;font-size:.85rem;text-align:center;padding:20px}
-  .lb-item{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;margin-bottom:8px;background:#3d000044;border:1px solid #8B000033}
-  .lb-item.rank-1{background:linear-gradient(90deg,#8B000066,#FFD70022);border-color:var(--gold)}
-  .lb-item.rank-2{background:linear-gradient(90deg,#8B000044,#C0C0C022)}
-  .lb-item.rank-3{background:linear-gradient(90deg,#8B000044,#CD7F3222)}
-  .lb-rank{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.85rem;flex-shrink:0}
-  .rank-1 .lb-rank{background:var(--gold);color:var(--dark)}
-  .rank-2 .lb-rank{background:#C0C0C0;color:var(--dark)}
-  .rank-3 .lb-rank{background:#CD7F32;color:var(--dark)}
-  .lb-item:not(.rank-1):not(.rank-2):not(.rank-3) .lb-rank{background:#8B000066;color:var(--peach)}
-  .lb-info{flex:1}
-  .lb-name{color:#fff;font-weight:700;font-size:.9rem}
-  .lb-phone{color:#88888888;font-size:.75rem}
-  .lb-amount{color:var(--gold);font-weight:800;font-size:1rem}
+    .lb-empty{color:#88444488;font-size:.85rem;text-align:center;padding:20px}
+    .lb-item{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;margin-bottom:8px;background:#3d000044;border:1px solid #8B000033}
+    .lb-item.rank-1{background:linear-gradient(90deg,#8B000066,#FFD70022);border-color:var(--gold)}
+    .lb-item.rank-2{background:linear-gradient(90deg,#8B000044,#C0C0C022)}
+    .lb-item.rank-3{background:linear-gradient(90deg,#8B000044,#CD7F3222)}
+    .lb-rank{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.85rem;flex-shrink:0}
+    .rank-1 .lb-rank{background:var(--gold);color:var(--dark)}
+    .rank-2 .lb-rank{background:#C0C0C0;color:var(--dark)}
+    .rank-3 .lb-rank{background:#CD7F32;color:var(--dark)}
+    .lb-item:not(.rank-1):not(.rank-2):not(.rank-3) .lb-rank{background:#8B000066;color:var(--peach)}
+    .lb-info{flex:1}
+    .lb-name{color:#fff;font-weight:700;font-size:.9rem}
+    .lb-phone{color:#88888888;font-size:.75rem}
+    .lb-amount{color:var(--gold);font-weight:800;font-size:1rem}
 
-  .spark{position:fixed;width:6px;height:6px;border-radius:50%;pointer-events:none;z-index:9999;animation:sparkFly 1s ease-out forwards}
-  @keyframes sparkFly{0%{transform:translate(0,0) scale(1);opacity:1}100%{transform:translate(var(--tx),var(--ty)) scale(0);opacity:0}}
-</style>
+    .spark{position:fixed;width:6px;height:6px;border-radius:50%;pointer-events:none;z-index:9999;animation:sparkFly 1s ease-out forwards}
+    @keyframes sparkFly{0%{transform:translate(0,0) scale(1);opacity:1}100%{transform:translate(var(--tx),var(--ty)) scale(0);opacity:0}}
+
+    #quyInfo { color: var(--gold); text-align: center; margin-bottom: 12px; font-weight: 700; font-size: 1.1rem; }
+  </style>
 </head>
 <body>
 <div class="bg-pattern"></div>
@@ -102,7 +105,6 @@
     <p>Chào mừng Năm Mới 2025 · Vạn Sự Như Ý</p>
   </div>
 
-  <!-- FORM -->
   <div class="card" id="formSection">
     <div class="card-title">🧧 Thông Tin Người Nhận</div>
     <div class="form-group">
@@ -116,7 +118,6 @@
     <button class="btn-main" onclick="startGame()">🌳 Vào Hái Lộc →</button>
   </div>
 
-  <!-- TREE -->
   <div class="tree-section" id="treeSection">
     <div class="user-greeting" id="greetingText"></div>
     <div class="card">
@@ -125,48 +126,22 @@
       <div style="display:flex;justify-content:center">
         <div class="tree-container" id="treeContainer">
           <svg class="tree-svg" viewBox="0 0 280 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- trunk -->
+            <!-- Trunk -->
             <path d="M140 310 L140 200" stroke="#7B4030" stroke-width="20" stroke-linecap="round"/>
-            <path d="M130 310 Q124 255 118 200 Q112 150 108 100" stroke="#6B3A2A" stroke-width="14" stroke-linecap="round" fill="none"/>
-            <path d="M150 310 Q156 255 162 200 Q168 150 172 100" stroke="#8B4A3A" stroke-width="10" stroke-linecap="round" fill="none"/>
-            <!-- branches -->
-            <path d="M134 248 Q98 228 76 208" stroke="#6B3A2A" stroke-width="8" stroke-linecap="round" fill="none"/>
-            <path d="M138 218 Q172 198 194 178" stroke="#6B3A2A" stroke-width="7" stroke-linecap="round" fill="none"/>
-            <path d="M135 188 Q103 163 88 138" stroke="#6B3A2A" stroke-width="6" stroke-linecap="round" fill="none"/>
-            <path d="M143 168 Q177 143 197 118" stroke="#6B3A2A" stroke-width="5" stroke-linecap="round" fill="none"/>
-            <path d="M137 138 Q118 108 113 78" stroke="#6B3A2A" stroke-width="5" stroke-linecap="round" fill="none"/>
-            <path d="M146 128 Q162 98 167 68" stroke="#6B3A2A" stroke-width="4" stroke-linecap="round" fill="none"/>
-            <!-- blossoms -->
-            <circle cx="76"  cy="206" r="22" fill="#FFB7C5" opacity=".55"/>
-            <circle cx="72"  cy="200" r="9"  fill="#FF8FA3"/>
-            <circle cx="82"  cy="196" r="8"  fill="#FFB7C5"/>
-            <circle cx="68"  cy="212" r="7"  fill="#FF99B0"/>
-            <circle cx="86"  cy="210" r="8"  fill="#FFB7C5"/>
-            <circle cx="194" cy="176" r="20" fill="#FFB7C5" opacity=".55"/>
-            <circle cx="190" cy="170" r="9"  fill="#FF8FA3"/>
-            <circle cx="198" cy="166" r="8"  fill="#FFB7C5"/>
-            <circle cx="187" cy="180" r="7"  fill="#FF99B0"/>
-            <circle cx="202" cy="178" r="8"  fill="#FFB7C5"/>
-            <circle cx="86"  cy="136" r="20" fill="#FFB7C5" opacity=".65"/>
-            <circle cx="82"  cy="130" r="9"  fill="#FF8FA3"/>
-            <circle cx="90"  cy="126" r="8"  fill="#FFB7C5"/>
-            <circle cx="78"  cy="142" r="7"  fill="#FF99B0"/>
-            <circle cx="197" cy="116" r="18" fill="#FFB7C5" opacity=".65"/>
-            <circle cx="193" cy="110" r="8"  fill="#FF8FA3"/>
-            <circle cx="201" cy="106" r="7"  fill="#FFB7C5"/>
-            <circle cx="113" cy="76"  r="18" fill="#FFB7C5" opacity=".75"/>
-            <circle cx="109" cy="70"  r="8"  fill="#FF8FA3"/>
-            <circle cx="117" cy="66"  r="8"  fill="#FFB7C5"/>
-            <circle cx="167" cy="66"  r="16" fill="#FFB7C5" opacity=".75"/>
-            <circle cx="163" cy="60"  r="8"  fill="#FF8FA3"/>
-            <circle cx="169" cy="56"  r="7"  fill="#FFB7C5"/>
-            <circle cx="140" cy="42"  r="24" fill="#FFB7C5" opacity=".7"/>
-            <circle cx="133" cy="36"  r="10" fill="#FF8FA3"/>
-            <circle cx="144" cy="32"  r="9"  fill="#FFB7C5"/>
-            <circle cx="128" cy="46"  r="8"  fill="#FF99B0"/>
-            <circle cx="150" cy="44"  r="9"  fill="#FFB7C5"/>
+            <!-- Branches -->
+            <path d="M140 200 Q100 160, 80 120" stroke="#5D2E1F" stroke-width="12" stroke-linecap="round"/>
+            <path d="M140 200 Q180 160, 200 120" stroke="#5D2E1F" stroke-width="12" stroke-linecap="round"/>
+            <path d="M140 160 Q90 120, 70 80" stroke="#4A2518" stroke-width="10" stroke-linecap="round"/>
+            <path d="M140 160 Q190 120, 210 80" stroke="#4A2518" stroke-width="10" stroke-linecap="round"/>
+            <!-- Blossoms / Leaves -->
+            <circle cx="70" cy="80" r="18" fill="#FF69B4" opacity="0.9"/>
+            <circle cx="90" cy="60" r="15" fill="#FF1493" opacity="0.8"/>
+            <circle cx="210" cy="80" r="18" fill="#FF69B4" opacity="0.9"/>
+            <circle cx="190" cy="60" r="15" fill="#FF1493" opacity="0.8"/>
+            <circle cx="80" cy="120" r="20" fill="#FFB6C1" opacity="0.85"/>
+            <circle cx="200" cy="120" r="20" fill="#FFB6C1" opacity="0.85"/>
+            <circle cx="140" cy="140" r="22" fill="#FF69B4" opacity="0.9"/>
           </svg>
-          <!-- envelopes placed via JS -->
           <div id="envsWrap" style="position:absolute;inset:0;pointer-events:none"></div>
         </div>
       </div>
@@ -174,7 +149,6 @@
     </div>
   </div>
 
-  <!-- SCRATCH -->
   <div class="scratch-section" id="scratchSection">
     <div class="card">
       <div class="card-title">🪙 Cào Để Xem Số Tiền</div>
@@ -183,7 +157,7 @@
       <div style="display:flex;justify-content:center">
         <div class="scratch-wrapper">
           <div class="scratch-result">
-            <div class="amount"  id="amountDisplay">???</div>
+            <div class="amount" id="amountDisplay">???</div>
             <div class="currency">đồng</div>
             <div class="luck-msg" id="luckMsg">🌸 Chúc Mừng Năm Mới 🌸</div>
           </div>
@@ -194,222 +168,373 @@
     </div>
   </div>
 
-  <!-- REVEAL -->
   <div class="reveal-section" id="revealSection">
     <div class="card">
       <div class="card-title">🎉 Kết Quả Lì Xì</div>
       <div class="divider"></div>
       <div class="reveal-amount" id="revealAmount"></div>
-      <div class="reveal-msg"   id="revealMsg2"></div>
+      <div class="reveal-msg" id="revealMsg2"></div>
       <div style="margin-top:10px;color:#ffddaa88;font-size:.8rem;text-align:center">Momo: <span id="revealPhone"></span></div>
       <button class="btn-again" onclick="playAgain()">🌸 Hái Thêm Lần Nữa</button>
     </div>
   </div>
 
-  <!-- LEADERBOARD -->
   <div class="card">
     <div class="card-title">🏆 Bảng Xếp Hạng Lì Xì</div>
     <div class="divider"></div>
-    <div id="leaderboard"><div class="lb-empty">Đang tải...</div></div>
+    <div id="quyInfo">
+      Quỹ còn lại: <span id="quyConLai">200.000</span>đ (còn <span id="slotCon">10</span> lượt)
+    </div>
+    <div id="leaderboard"><div class="lb-empty">Đang tải bảng xếp hạng...</div></div>
   </div>
 </div>
 
 <script>
-/* ---- decoration ---- */
-(function(){
-  const pc=document.getElementById('petals');
-  for(let i=0;i<18;i++){const p=document.createElement('div');p.className='petal';p.style.cssText=`left:${Math.random()*100}%;top:${-20-Math.random()*100}px;animation-duration:${4+Math.random()*6}s;animation-delay:${Math.random()*8}s`;pc.appendChild(p);}
-  const lc=document.getElementById('lanterns');
-  for(let i=0;i<6;i++){const l=document.createElement('div');l.className='lantern';lc.appendChild(l);}
+// ── CONFIG GOOGLE APPS SCRIPT ──
+// Thay bằng Web app URL của bạn sau khi deploy Apps Script
+const API_URL = 'https://script.google.com/macros/s/AKfycbwZJQyN0COTFAhrx_xVNI2zf6fsVFD5Za6qKq-6I8lk0j8LxWgMwwab5u0srXE_ujSe/exec';  // ← THAY Ở ĐÂY
+
+// ── STATE & QUỸ ──
+let user = null;
+let prize = null;
+let leaderboard = [];
+const QUY_TONG = 200000;
+const MAX_PLAYERS = 10;
+let quyConLai = QUY_TONG;
+let slotsCon = MAX_PLAYERS;
+
+// ── PRIZES ──
+const PRIZES_POOL = [
+  {amount:50000, label:'50.000đ', msg:'🌸 Xuân an khang!'},
+  {amount:30000, label:'30.000đ', msg:'🌿 Hanh thông mọi việc!'},
+  {amount:20000, label:'20.000đ', msg:'💰 Lộc nhỏ đầu xuân!'},
+  {amount:15000, label:'15.000đ', msg:'🎉 May mắn năm mới!'},
+  {amount:10000, label:'10.000đ', msg:'🌸 Lộc xuân bình an!'},
+  {amount:10000, label:'10.000đ', msg:'🌸 Lộc xuân bình an!'},
+  {amount:10000, label:'10.000đ', msg:'🌸 Lộc xuân bình an!'},
+  {amount:5000, label:'5.000đ', msg:'🌱 Khởi đầu thuận lợi!'},
+  {amount:5000, label:'5.000đ', msg:'🌱 Khởi đầu thuận lợi!'},
+  {amount:0, label:'Chúc may mắn lần sau!', msg:'Cố lên nhé! 🌸'}
+];
+
+function getRandomPrize() {
+  const totalWeight = PRIZES_POOL.reduce((sum, p) => sum + (1 / (p.amount || 1)), 0);
+  let rand = Math.random() * totalWeight;
+  let sum = 0;
+  for (let p of PRIZES_POOL) {
+    sum += 1 / (p.amount || 1);
+    if (rand <= sum) return p;
+  }
+  return PRIZES_POOL[PRIZES_POOL.length - 1];
+}
+
+// ── GOOGLE SHEETS API ──
+async function loadLeaderboard() {
+  try {
+    const res = await fetch(`${API_URL}?action=getLeaderboard`, { 
+      method: 'GET',
+      mode: 'cors',
+      cache: 'no-cache'
+    });
+    const data = await res.json();
+    if (data.error) throw new Error(data.error);
+
+    leaderboard = data || [];
+    slotsCon = MAX_PLAYERS - leaderboard.length;
+    quyConLai = QUY_TONG - leaderboard.reduce((sum, r) => sum + (r.amount || 0), 0);
+
+    document.getElementById('quyConLai').textContent = quyConLai.toLocaleString('vi-VN');
+    document.getElementById('slotCon').textContent = slotsCon;
+
+    renderLeaderboard();
+  } catch (err) {
+    console.error('Lỗi tải BXH:', err);
+    document.getElementById('leaderboard').innerHTML = '<div class="lb-empty">Không tải được bảng xếp hạng...</div>';
+  }
+}
+
+async function saveResult(entry) {
+  try {
+    const payload = {
+      action: 'append',
+      name: entry.name,
+      phone: entry.phone,
+      amount: entry.amount,
+      label: entry.label
+    };
+
+    await fetch(API_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    // Vì no-cors nên không đọc response → refresh sau 1s
+    setTimeout(loadLeaderboard, 1200);
+  } catch (err) {
+    console.error('Lỗi lưu:', err);
+    alert('Không lưu được kết quả. Vui lòng thử lại!');
+  }
+}
+
+// ── DECORATIONS ──
+(function initDecorations() {
+  const petals = document.getElementById('petals');
+  for (let i = 0; i < 18; i++) {
+    const p = document.createElement('div');
+    p.className = 'petal';
+    p.style.left = Math.random() * 100 + '%';
+    p.style.top = -20 - Math.random() * 100 + 'px';
+    p.style.animationDuration = (4 + Math.random() * 6) + 's';
+    p.style.animationDelay = Math.random() * 8 + 's';
+    petals.appendChild(p);
+  }
+
+  const lanterns = document.getElementById('lanterns');
+  for (let i = 0; i < 6; i++) {
+    const l = document.createElement('div');
+    l.className = 'lantern';
+    lanterns.appendChild(l);
+  }
 })();
 
-/* ---- prizes ---- */
-const PRIZES=[
-  {amount:10000,  label:'10.000đ',    msg:'🌸 Lộc nhỏ đầu xuân!'},
-  {amount:20000,  label:'20.000đ',    msg:'🌿 Vạn sự hanh thông!'},
-  {amount:50000,  label:'50.000đ',    msg:'🌸 Xuân an khang thịnh vượng!'},
-  {amount:100000, label:'100.000đ',   msg:'🎉 Năm mới phát tài!'},
-  {amount:200000, label:'200.000đ',   msg:'💰 Tiền vào như nước!'},
-  {amount:500000, label:'500.000đ',   msg:'🔥 Phú quý vinh hoa!'},
-  {amount:1000000,label:'1.000.000đ', msg:'👑 Đại cát đại lợi!'},
-  {amount:2000000,label:'2.000.000đ', msg:'🌟 Trúng đỉnh đầu xuân!!!'},
-];
-const W=[5,15,25,22,17,10,5,1];
-function randPrize(){let s=W.reduce((a,b)=>a+b,0),r=Math.random()*s;for(let i=0;i<W.length;i++){r-=W[i];if(r<=0)return PRIZES[i];}return PRIZES[0];}
-
-/* ---- envelope positions (% on 280×320 SVG rendered at CSS px) ---- */
-const ENV_POS=[
-  {left:'25%',top:'60%'},
-  {left:'68%',top:'50%'},
-  {left:'26%',top:'38%'},
-  {left:'69%',top:'32%'},
-  {left:'37%',top:'17%'},
-  {left:'56%',top:'14%'},
+const ENV_POS = [
+  {left:'25%',top:'60%'}, {left:'68%',top:'50%'},
+  {left:'26%',top:'38%'}, {left:'69%',top:'32%'},
+  {left:'37%',top:'17%'}, {left:'56%',top:'14%'},
 ];
 
-/* ---- state ---- */
-let user=null, prize=null, leaderboard=[];
-const SKEY='lixi-leaderboard-2025';
-
-/* ---- storage helpers ---- */
-async function loadLB(){
-  try{
-    const r=await window.storage.get(SKEY,true);
-    leaderboard=r?JSON.parse(r.value):[];
-  }catch(e){leaderboard=[];}
-  renderLB();
+function startGame() {
+  const n = document.getElementById('inputName').value.trim();
+  const p = document.getElementById('inputPhone').value.trim();
+  if (!n) return alert('Vui lòng nhập tên Momo!');
+  if (!p || p.length < 9) return alert('Số Momo không hợp lệ!');
+  
+  user = { name: n, phone: p };
+  document.getElementById('greetingText').innerHTML = `Xin chào, <strong>${escapeHtml(n)}</strong>! Hãy chọn phong bì may mắn 🌸`;
+  
+  buildEnvs();
+  showSection('formSection', false);
+  showSection('treeSection', true);
+  scrollTo('treeSection');
 }
-async function saveLB(){
-  try{await window.storage.set(SKEY,JSON.stringify(leaderboard),true);}catch(e){}
-}
 
-/* ---- build envelope buttons ---- */
-function buildEnvs(){
-  const wrap=document.getElementById('envsWrap');
-  wrap.innerHTML='';
-  wrap.style.pointerEvents='none';
-  ENV_POS.forEach((pos,i)=>{
-    const btn=document.createElement('button');
-    btn.className='env-btn';
-    btn.style.cssText=`left:${pos.left};top:${pos.top};transform:translate(-50%,-50%);pointer-events:all;animation-delay:${i*0.25}s`;
-    btn.textContent='🧧';
-    btn.addEventListener('click',()=>pickEnv(i,btn),{once:true});
+function buildEnvs() {
+  const wrap = document.getElementById('envsWrap');
+  wrap.innerHTML = '';
+  ENV_POS.forEach((pos, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'env-btn';
+    btn.style.left = pos.left;
+    btn.style.top = pos.top;
+    btn.style.transform = 'translate(-50%, -50%)';
+    btn.textContent = '🧧';
+    btn.onclick = () => pickEnv(i, btn);
     wrap.appendChild(btn);
   });
 }
 
-/* ---- game flow ---- */
-function startGame(){
-  const n=document.getElementById('inputName').value.trim();
-  const p=document.getElementById('inputPhone').value.trim();
-  if(!n){alert('Vui lòng nhập tên Momo!');return;}
-  if(!p){alert('Vui lòng nhập số tài khoản Momo!');return;}
-  user={name:n,phone:p};
-  document.getElementById('greetingText').innerHTML=`Xin chào, <strong>${esc(n)}</strong>! Hãy chọn phong bì may mắn 🌸`;
-  buildEnvs();
-  show('formSection',false);
-  show('treeSection',true);
-  scroll('treeSection');
+function pickEnv(idx, btn) {
+  if (slotsCon <= 0) {
+    alert("Hết lượt hái lộc rồi! Quỹ đã được chia hết.");
+    return;
+  }
+
+  document.querySelectorAll('.env-btn').forEach(b => b.disabled = true);
+  btn.style.transition = 'all 0.4s';
+  btn.style.transform = 'translate(-50%, -50%) scale(1.6)';
+  btn.style.opacity = '0';
+
+  prize = getRandomPrize();
+
+  setTimeout(() => {
+    showSection('treeSection', false);
+    document.getElementById('amountDisplay').textContent = prize.label;
+    document.getElementById('luckMsg').textContent = prize.msg;
+    showSection('scratchSection', true);
+    initScratchCard();
+    scrollTo('scratchSection');
+  }, 600);
 }
 
-function pickEnv(idx,btn){
-  // Disable remaining buttons
-  document.querySelectorAll('.env-btn').forEach(b=>{b.style.pointerEvents='none';});
-  btn.style.transition='transform .35s ease, opacity .35s ease';
-  btn.style.transform='translate(-50%,-50%) scale(1.4)';
-  btn.style.opacity='0';
+function initScratchCard() {
+  const canvas = document.getElementById('scratchCanvas');
+  const ctx = canvas.getContext('2d');
+  let isDrawing = false;
+  let revealed = false;
 
-  prize=randPrize();
+  // Vẽ lớp phủ
+  ctx.fillStyle = '#7a0000';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.globalCompositeOperation = 'destination-out';
 
-  setTimeout(()=>{
-    show('treeSection',false);
-    document.getElementById('amountDisplay').textContent=prize.label;
-    document.getElementById('luckMsg').textContent=prize.msg;
-    show('scratchSection',true);
-    initScratch();
-    scroll('scratchSection');
-  },500);
-}
+  // Text hướng dẫn trên lớp phủ
+  ctx.globalCompositeOperation = 'source-over';
+  ctx.fillStyle = '#ffffff';
+  ctx.font = 'bold 20px Arial';
+  ctx.textAlign = 'center';
+  ctx.fillText('CÀO ĐỂ MỞ LÌ XÌ', canvas.width/2, canvas.height/2 + 8);
+  ctx.globalCompositeOperation = 'destination-out';
 
-function initScratch(){
-  const cv=document.getElementById('scratchCanvas');
-  const cx=cv.getContext('2d');
-  let painting=false, done=false;
-
-  cv.style.pointerEvents='auto';
-  cx.globalCompositeOperation='source-over';
-  cx.clearRect(0,0,260,160);
-
-  // Cover layer
-  const g=cx.createLinearGradient(0,0,260,160);
-  g.addColorStop(0,'#7a0000'); g.addColorStop(.5,'#aa0000'); g.addColorStop(1,'#7a0000');
-  cx.fillStyle=g; cx.fillRect(0,0,260,160);
-  cx.fillStyle='#cc000066';
-  for(let x=0;x<260;x+=20)for(let y=0;y<160;y+=20){cx.beginPath();cx.arc(x+10,y+10,8,0,Math.PI*2);cx.fill();}
-  cx.fillStyle='#FFD700'; cx.font='bold 16px Be Vietnam Pro,sans-serif'; cx.textAlign='center';
-  cx.fillText('👆 CÀO ĐỂ MỞ LÌ XÌ',130,72);
-  cx.font='13px Be Vietnam Pro,sans-serif'; cx.fillStyle='#FFD70099';
-  cx.fillText('✨ Chúc Mừng Năm Mới ✨',130,102);
-
-  function xy(e){const r=cv.getBoundingClientRect(),sx=cv.width/r.width,sy=cv.height/r.height;if(e.touches)return{x:(e.touches[0].clientX-r.left)*sx,y:(e.touches[0].clientY-r.top)*sy};return{x:(e.clientX-r.left)*sx,y:(e.clientY-r.top)*sy};}
-  function draw(e){if(!painting||done)return;e.preventDefault();const p=xy(e);cx.globalCompositeOperation='destination-out';cx.beginPath();cx.arc(p.x,p.y,26,0,Math.PI*2);cx.fill();check();}
-  function check(){if(done)return;const d=cx.getImageData(0,0,260,160).data;let t=0;for(let i=3;i<d.length;i+=4)if(d[i]<128)t++;if(t/(260*160)>.6){done=true;cv.style.pointerEvents='none';setTimeout(showReveal,400);}}
-
-  cv.onmousedown=e=>{painting=true;draw(e)};
-  cv.onmousemove=draw;
-  cv.onmouseup=()=>painting=false;
-  cv.onmouseleave=()=>painting=false;
-  cv.ontouchstart=e=>{painting=true;draw(e)};
-  cv.ontouchmove=draw;
-  cv.ontouchend=()=>painting=false;
-}
-
-async function showReveal(){
-  show('scratchSection',false);
-  document.getElementById('revealAmount').textContent=prize.label;
-  document.getElementById('revealMsg2').textContent=prize.msg;
-  document.getElementById('revealPhone').textContent=mask(user.phone);
-  show('revealSection',true);
-  scroll('revealSection');
-
-  leaderboard.push({name:user.name,phone:mask(user.phone),amount:prize.amount,label:prize.label,time:Date.now()});
-  leaderboard.sort((a,b)=>b.amount-a.amount);
-  await saveLB();
-  renderLB();
-  if(prize.amount>=200000) fireworks();
-}
-
-function playAgain(){
-  user=null; prize=null;
-  document.getElementById('inputName').value='';
-  document.getElementById('inputPhone').value='';
-  show('formSection',true);
-  show('treeSection',false);
-  show('scratchSection',false);
-  show('revealSection',false);
-  scroll('formSection');
-}
-
-/* ---- render leaderboard ---- */
-function renderLB(){
-  const el=document.getElementById('leaderboard');
-  if(!leaderboard.length){el.innerHTML='<div class="lb-empty">Chưa có ai hái lộc. Hãy là người đầu tiên! 🌸</div>';return;}
-  const medals=['🥇','🥈','🥉'];
-  el.innerHTML=leaderboard.slice(0,15).map((x,i)=>`
-    <div class="lb-item rank-${i+1}">
-      <div class="lb-rank">${medals[i]||(i+1)}</div>
-      <div class="lb-info"><div class="lb-name">${esc(x.name)}</div><div class="lb-phone">${esc(x.phone)}</div></div>
-      <div class="lb-amount">${esc(x.label)}</div>
-    </div>`).join('');
-}
-
-/* ---- fireworks ---- */
-function fireworks(){
-  const C=['#FFD700','#FF4444','#FF8FA3','#fff','#FFA500'];
-  for(let f=0;f<6;f++)setTimeout(()=>{
-    const cx=15+Math.random()*70, cy=5+Math.random()*35;
-    for(let s=0;s<16;s++){
-      const sp=document.createElement('div'); sp.className='spark';
-      const a=(s/16)*Math.PI*2, d=50+Math.random()*80;
-      sp.style.cssText=`left:${cx}%;top:${cy}%;--tx:${Math.cos(a)*d}px;--ty:${Math.sin(a)*d}px;background:${C[s%C.length]};animation-delay:${Math.random()*.2}s`;
-      document.body.appendChild(sp); setTimeout(()=>sp.remove(),1300);
+  function getPos(e) {
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    if (e.touches) {
+      return {
+        x: (e.touches[0].clientX - rect.left) * scaleX,
+        y: (e.touches[0].clientY - rect.top) * scaleY
+      };
     }
-  },f*220);
+    return {
+      x: (e.clientX - rect.left) * scaleX,
+      y: (e.clientY - rect.top) * scaleY
+    };
+  }
+
+  function draw(e) {
+    if (!isDrawing || revealed) return;
+    e.preventDefault();
+    const pos = getPos(e);
+    ctx.beginPath();
+    ctx.arc(pos.x, pos.y, 26, 0, Math.PI * 2);
+    ctx.fill();
+    checkReveal();
+  }
+
+  function checkReveal() {
+    if (revealed) return;
+    const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+    let transparentCount = 0;
+    for (let i = 3; i < imgData.length; i += 4) {
+      if (imgData[i] < 128) transparentCount++;
+    }
+    if (transparentCount / (canvas.width * canvas.height) > 0.6) {
+      revealed = true;
+      canvas.style.pointerEvents = 'none';
+      setTimeout(showReveal, 500);
+    }
+  }
+
+  canvas.onpointerdown = (e) => { isDrawing = true; draw(e); };
+  canvas.onpointermove = draw;
+  canvas.onpointerup = canvas.onpointerleave = () => isDrawing = false;
+
+  canvas.ontouchstart = (e) => { isDrawing = true; draw(e); };
+  canvas.ontouchmove = draw;
+  canvas.ontouchend = () => isDrawing = false;
 }
 
-/* ---- helpers ---- */
-function show(id,on){const el=document.getElementById(id);if(on){el.style.display='';el.classList.add('active');}else{el.style.display='none';el.classList.remove('active');}}
-function scroll(id){setTimeout(()=>document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'}),120);}
-function mask(p){p=p.replace(/\s/g,'');return p.length>6?p.slice(0,3)+'****'+p.slice(-3):p;}
-function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+async function showReveal() {
+  showSection('scratchSection', false);
+  document.getElementById('revealAmount').textContent = prize.label;
+  document.getElementById('revealMsg2').textContent = prize.msg;
+  document.getElementById('revealPhone').textContent = maskPhone(user.phone);
+  showSection('revealSection', true);
+  scrollTo('revealSection');
 
-/* ---- init ---- */
-show('formSection',true);
-show('treeSection',false);
-show('scratchSection',false);
-show('revealSection',false);
-loadLB();
-setInterval(loadLB,12000); // refresh leaderboard every 12s
+  const entry = {
+    name: user.name,
+    phone: maskPhone(user.phone),
+    amount: prize.amount,
+    label: prize.label
+  };
+
+  await saveResult(entry);
+
+  if (prize.amount >= 20000) createFireworks();
+}
+
+function playAgain() {
+  user = null;
+  prize = null;
+  document.getElementById('inputName').value = '';
+  document.getElementById('inputPhone').value = '';
+  showSection('formSection', true);
+  showSection('treeSection', false);
+  showSection('scratchSection', false);
+  showSection('revealSection', false);
+  scrollTo('formSection');
+}
+
+// ── HELPERS ──
+function showSection(id, show) {
+  const el = document.getElementById(id);
+  el.style.display = show ? 'block' : 'none';
+  if (show) el.classList.add('active');
+  else el.classList.remove('active');
+}
+
+function scrollTo(id) {
+  setTimeout(() => {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 100);
+}
+
+function maskPhone(phone) {
+  phone = phone.replace(/\D/g, '');
+  if (phone.length <= 6) return phone;
+  return phone.slice(0,3) + '****' + phone.slice(-3);
+}
+
+function escapeHtml(text) {
+  return text.replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+}
+
+function renderLeaderboard() {
+  const container = document.getElementById('leaderboard');
+  if (leaderboard.length === 0) {
+    container.innerHTML = '<div class="lb-empty">Chưa có ai hái lộc. Bạn sẽ là người đầu tiên! 🌸</div>';
+    return;
+  }
+
+  const medals = ['🥇', '🥈', '🥉'];
+  container.innerHTML = leaderboard.map((item, index) => `
+    <div class="lb-item rank-${index + 1}">
+      <div class="lb-rank">${medals[index] || (index + 1)}</div>
+      <div class="lb-info">
+        <div class="lb-name">${escapeHtml(item.name)}</div>
+        <div class="lb-phone">${escapeHtml(item.phone)}</div>
+      </div>
+      <div class="lb-amount">${escapeHtml(item.label)}</div>
+    </div>
+  `).join('');
+}
+
+function createFireworks() {
+  const colors = ['#FFD700', '#FF4444', '#FF8FA3', '#FFFFFF', '#FFA500'];
+  for (let i = 0; i < 6; i++) {
+    setTimeout(() => {
+      const x = 15 + Math.random() * 70;
+      const y = 5 + Math.random() * 35;
+      for (let j = 0; j < 16; j++) {
+        const spark = document.createElement('div');
+        spark.className = 'spark';
+        const angle = (j / 16) * Math.PI * 2;
+        const dist = 50 + Math.random() * 80;
+        spark.style.cssText = `
+          left:${x}%; top:${y}%;
+          --tx:${Math.cos(angle) * dist}px;
+          --ty:${Math.sin(angle) * dist}px;
+          background:${colors[j % colors.length]};
+          animation-delay:${Math.random() * 0.2}s;
+        `;
+        document.body.appendChild(spark);
+        setTimeout(() => spark.remove(), 1300);
+      }
+    }, i * 220);
+  }
+}
+
+// ── INIT ──
+showSection('formSection', true);
+showSection('treeSection', false);
+showSection('scratchSection', false);
+showSection('revealSection', false);
+
+loadLeaderboard();
+setInterval(loadLeaderboard, 10000); // refresh mỗi 10s
 </script>
 </body>
 </html>
